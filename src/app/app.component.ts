@@ -6,6 +6,8 @@ import {
   MatDrawerContent,
 } from '@angular/material/sidenav';
 import { MatButton } from '@angular/material/button';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
 import { SideNavComponent } from './core/components/side-nav/side-nav.component';
 
 @Component({
@@ -17,6 +19,8 @@ import { SideNavComponent } from './core/components/side-nav/side-nav.component'
     MatDrawerContainer,
     MatDrawerContent,
     MatButton,
+    MatToolbar,
+    MatIcon,
     SideNavComponent,
   ],
   templateUrl: './app.component.html',

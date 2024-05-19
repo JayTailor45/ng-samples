@@ -4,7 +4,17 @@
   </mat-drawer>
   <mat-drawer-content>
     <div class="full-height">
-      <button mat-raised-button (click)="drawer.toggle()">Nav</button>
+      <mat-toolbar class="flex items-center justify-between">
+        <div class="space-x-4">
+          <button mat-icon-button>
+            <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+          </button>
+          <span>Angular Code Samples by Jay Tailor</span>
+        </div>
+        <a href="http://github.com/jaytailor45/ng-samples" target="_blank">
+          <mat-icon>star</mat-icon>
+        </a>
+      </mat-toolbar>
       <router-outlet />
     </div>
   </mat-drawer-content>
