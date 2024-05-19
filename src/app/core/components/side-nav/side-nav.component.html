@@ -1,5 +1,9 @@
 <mat-nav-list>
   @for (nav of navigations; track nav.id) {
-    <a mat-list-item [routerLink]="nav.path" routerLinkActive="active">{{nav.name}}</a>
+    <a mat-list-item
+      [routerLink]="nav.path"
+      routerLinkActive="active"
+      (click)="navChanged.emit()"
+    > {{nav.name}} </a>
   }
 </mat-nav-list>

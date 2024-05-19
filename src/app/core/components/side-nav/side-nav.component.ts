@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { MatListModule } from '@angular/material/list';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {MatListModule} from '@angular/material/list';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 type NavItem = {
   id: number;
@@ -16,11 +16,19 @@ type NavItem = {
   styleUrl: './side-nav.component.scss',
 })
 export class SideNavComponent {
+
   readonly navigations: NavItem[] = [
     {
       id: 1,
       name: 'Home',
       path: 'home',
     },
+    {
+      id: 2,
+      name: 'Signal Store CRUD',
+      path: 'signal-store-crud',
+    },
   ];
+
+  @Output() navChanged = new EventEmitter<void>();
 }

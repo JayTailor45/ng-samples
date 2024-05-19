@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Add New User</h2>
+<mat-dialog-content class="mat-typography">
+  <div [formGroup]="userForm" class="grid">
+
+    <mat-form-field class="[view-transition-name:first-name]">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" matInput placeholder="First name">
+      <mat-error *ngIf="userForm.controls.firstName.hasError('required') && userForm.controls.firstName.touched">
+        First Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Last name">
+      <mat-error *ngIf="userForm.controls.lastName.hasError('required') && userForm.controls.lastName.touched">
+        Last Name is required.
+      </mat-error>
+    </mat-form-field>
+
+
+    <div>
+      <mat-label>Gender</mat-label>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+        <mat-error *ngIf="userForm.controls.gender.hasError('required') && userForm.controls.gender.touched">
+          Gender is required.
+        </mat-error>
+      </mat-radio-group>
+    </div>
+
+    <div>
+      <mat-label>Terms & Conditions</mat-label>
+      <mat-checkbox formControlName="terms">
+        <mat-error *ngIf="userForm.controls.terms.hasError('terms-required') && userForm.controls.terms.touched">
+          User needs to accept the terms and condition.
+        </mat-error>
+      </mat-checkbox>
+    </div>
+
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close mat-stroked-button>Cancel</button>
+  <button (click)="onSubmit()" cdkFocusInitial color="primary" mat-button mat-raised-button>Add</button>
+</mat-dialog-actions>

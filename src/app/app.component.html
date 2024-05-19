@@ -1,6 +1,6 @@
 <mat-drawer-container [hasBackdrop]="true">
   <mat-drawer #drawer [mode]="'over'">
-    <app-side-nav />
+    <app-side-nav (navChanged)="drawer.toggle()"/>
   </mat-drawer>
   <mat-drawer-content>
     <div class="full-height">
@@ -15,7 +15,7 @@
           <mat-icon>star</mat-icon>
         </a>
       </mat-toolbar>
-      <router-outlet />
+      <router-outlet/>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
